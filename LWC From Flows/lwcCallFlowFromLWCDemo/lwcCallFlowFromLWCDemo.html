@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title = "Another Flow called from LWC">
+        <lightning-button variant = "base" label="Call Flow" class="slds-m-left_small" onclick={handleClick}></lightning-button>
+        <lightning-input type="text" label="FLOW Status Events" 
+            value={statusvalue}  read-only name= "flowstatusevent"></lightning-input>
+        <lightning-flow if:true={RenderFlow} 
+            flow-api-name={flowApiName}
+            flow-input-variables={flowInputVariables} 
+            onstatuschange={handleFlowStatusChange}></lightning-flow>
+    </lightning-card>
+</template>
+
+
+<!--
+        <lightning-flow if:true={RenderFlow} 
+            flow-api-name={flowAPiName}
+            flow-input-variables={flowInputVariables} 
+            onstatuschange={handleFlowStatusChange}></lightning-flow>
+    </lightning-card>
+
+        <lightning-flow flow-api-name="FlowFromLWC" flow-input-variables={flowInputVariables} onstatuschange={handleFlowStatusChange} if:true={RenderFlow}></lightning-flow>    
+
+-->
