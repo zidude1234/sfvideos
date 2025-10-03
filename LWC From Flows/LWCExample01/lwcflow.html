@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title = "LW Component in Flow Example">
+        <div class="slds-m-around_medium">
+            <lightning-input type="text" label="Account name" 
+              value={name} onchange={nameChangeHandler} name= "name"></lightning-input>
+
+            <lightning-input type="phone" label="Phone Number" 
+              value={phone} onchange={phoneChangeHandler} name= "phone"></lightning-input>
+
+            <lightning-input type="email" label="Input your Email" 
+              value={email} onchange={emailChangeHandler} name= "email"></lightning-input>
+
+            </div>
+   
+    </lightning-card>
+    
+</template>
