@@ -1,4 +1,5 @@
 import { LightningElement,api } from 'lwc';
+import { CloseActionScreenEvent } from 'lightning/actions';
 
 export default class LwcCallFlowFromLWCDemo extends LightningElement {
 
@@ -25,11 +26,17 @@ export default class LwcCallFlowFromLWCDemo extends LightningElement {
         console.log('Record Id///' + this.recordId);
         this.RenderFlow = true;
     }
+    
     handleFlowStatusChange(event) {
         console.log('Flow Status:' + event.detail.status);
         this.statusvalue = event.detail.status;
+/**
+        if (event.detail.status?.toLowerCase()!= 'finished') {
+            
+            } **/
         if (event.detail.status?.toLowerCase() == 'finished') {
             this.RenderFlow  = false;
+            this.dispatchEvent(new CloseActionScreenEvent());
         }
     }
 }
